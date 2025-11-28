@@ -23,17 +23,10 @@
         content="Explore the portfolio of Dominique Dale showcasing web design, SEO expertise, branding, and digital solutions.">
     <meta property="og:image" content="https://yourportfolio.com/path-to-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourportfolio.com/">
-    <meta property="twitter:title" content="Dev Dale | Portfolio">
-    <meta property="twitter:description"
-        content="Explore the portfolio of Dominique Dale showcasing web design, SEO expertise, branding, and digital solutions.">
-    <meta property="twitter:image" content="https://yourportfolio.com/path-to-image.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yourportfolio.com/">
-
+    <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,561 +34,6 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* Theme variables - soft peach and lavender color theme */
-        :root {
-            --primary: #a855a8;
-            /* darker lavender */
-            --primary-light: #d8b4e2;
-            /* light lavender */
-            --accent: #490348ab;
-            /* darker peach */
-            --accent-light: #fbd5c9;
-            /* light peach */
-            --bg: #faf8f6;
-            /* warm off-white */
-            --card: #fef9f7;
-            /* soft cream */
-            --copy: #000000;
-            /* black */
-            --text-muted-light: #7a7a7a;
-            /* lighter muted text */
-            --muted: #4a4a4a;
-            /* dark gray */
-            --btn-text: #ffffff;
-            /* button text */
-            --border: #e2dce6;
-            /* soft gray-lavender border */
-            --shadow-light: rgba(216, 180, 226, 0.3);
-            /* subtle lavender shadow */
-            --radius: 12px;
-            --glass: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Basic reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif
-        }
-
-        html,
-        body {
-            height: 100%
-        }
-
-        /* Center everything on the page and use column flow (mobile first) */
-
-        body {
-            color: var(--copy);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            /* full-page background: no-repeat, cover and fixed so it extends under the hero */
-            background-image: url('https://images.unsplash.com/photo-1568738351265-c7065f5d4293?w=1600&auto=format&fit=crop&q=80');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-color: var(--bg);
-        }
-
-        /* Container controls max width and centers content */
-        .container {
-            width: 95%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        /* --- Global typography color treatment --- */
-        h2,
-        h3,
-        h4,
-        .section-title,
-        .project-title {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            text-align: center;
-            margin: 0.25rem 0;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--glass);
-            margin-bottom: 0.5rem;
-        }
-
-        p,
-        li,
-        .timeline p,
-        .project-summary,
-        .about-me p {
-            color: var(--copy);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        a,
-        .about-me a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a:hover {
-            opacity: 0.9;
-            text-decoration: underline
-        }
-
-        .highlight {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        /* Hero */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 3rem 1rem;
-            width: 100%;
-            background: #FBD3E9;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #BB377D, #FBD3E9);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #BB377D, #FBD3E9);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            animation: gradientMove 0s ease infinite;
-            color: var(--btn-text);
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-            margin: .5rem 0
-        }
-
-        .hero p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.95)
-        }
-
-        .hero-avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(108, 99, 255, 0.18);
-            box-shadow: 0 0 12px rgba(108, 99, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.18);
-            margin-bottom: 1rem;
-        }
-
-        .btn-theme {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--btn-text);
-            padding: .7rem 1.2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            transition: transform .18s ease, box-shadow .18s ease, opacity .18s;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 12px rgba(255, 0, 255, 0.06);
-            text-decoration: none;
-        }
-
-        .btn-theme:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14)
-        }
-
-        /* Sections centered */
-        section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        /* About - mobile first stacked, larger screens side-by-side */
-        .about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .about img {
-            flex: 0 0 auto;
-            max-width: 260px;
-        }
-
-        .about-text {
-            flex: 1 1 auto;
-            width: 100%
-        }
-
-        .about-me {
-            max-width: 900px;
-            text-align: center
-        }
-
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: flex-start;
-            margin-bottom: 1rem;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 4px 20px #a855a8;
-            /* Shadow */
-            border-radius: 5%;
-            padding: 1rem;
-        }
-
-        .skill {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: #ffffff;
-            padding: .5rem .85rem;
-            border-radius: 25px;
-            font-weight: 600;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.06);
-            transition: transform .18s ease, box-shadow .18s ease;
-            white-space: nowrap;
-        }
-
-        .skill:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
-        }
-
-        /* Timeline simplified and centered */
-        .timeline {
-            position: relative;
-            padding: 0;
-            margin-bottom: 1rem;
-            width: 100%;
-            max-width: 720px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem
-        }
-
-        .timeline__item {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-            background: var(--card);
-            padding: .75rem 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04)
-        }
-
-        .timeline__item h3 {
-            margin: 0;
-            font-size: 1rem;
-            color: var(--copy)
-        }
-
-        .timeline__item p {
-            color: var(--muted);
-            margin: 0.15rem 0 0 0;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .timeline__dot {
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            flex: 0 0 auto;
-            margin-top: 6px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Portfolio grid uses centered cards */
-        #portfolio {
-            padding: 2rem 1rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            border-radius: 16px;
-            width: 100%;
-        }
-
-
-        .portfolio-grid {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: 1fr;
-            justify-items: center;
-            padding: 0 0.5rem;
-        }
-
-        .portfolio-item {
-            width: 100%;
-            max-width: 640px;
-            background: var(--card);
-            border-radius: 16px;
-            padding: 1rem;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            /* box-shadow:0 8px 25px rgba(0,0,0,0.06); */
-            transition: transform .2s ease, box-shadow .2s ease;
-            box-shadow: 0 4px 20px #a855a8;
-            /* Shadow */
-            /* background-color: #d8b4e28f; */
-            border-radius: 5%;
-            padding: 1rem;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10)
-        }
-
-        .portfolio-img {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: .75rem;
-            object-fit: cover;
-            display: block
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            margin-bottom: .25rem
-        }
-
-        .project-summary {
-            color: var(--muted);
-            margin-bottom: .9rem
-        }
-
-        .case-study {
-            display: none;
-            text-align: left;
-            margin-top: 12px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.98));
-            padding: 1rem;
-            border-radius: 12px;
-            border-left: 6px solid var(--accent);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            color: var(--copy);
-        }
-
-        .case-study.open {
-            display: block;
-        }
-
-        /* Contact form */
-        .contact-form {
-            max-width: 720px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: .2rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            font-size: 1rem;
-            color: var(--copy)
-        }
-
-        .contact-form button {
-            width: auto;
-            align-self: center;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--btn-text);
-            padding: .8rem 1.4rem;
-            border-radius: 30px;
-            border: none;
-            font-weight: 700;
-            cursor: pointer
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1.25rem 0;
-            background: #FBD3E9;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #BB377D, #FBD3E9);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #BB377D 0%, #BB377D 75%, #FBD3E9 100%);
-            /* extend #BB377D further right for better white text contrast */
-            ;
-            color: #fff;
-            width: 100%;
-            margin-top: 1.5rem;
-            border-top: 4px solid rgba(255, 255, 255, 0.02)
-        }
-
-        footer a {
-            color: var(--accent)
-        }
-
-        /* Larger screens: switch about to row, portfolio grid to 2 columns */
-        @media(min-width:769px) {
-            .container {
-                max-width: 1200px;
-            }
-
-            .hero h1 {
-                font-size: 2.6rem
-            }
-
-            .hero-avatar {
-                width: 180px;
-                height: 180px
-            }
-
-            .about {
-                flex-direction: row;
-                text-align: left;
-                align-items: flex-start;
-                gap: 2rem
-            }
-
-            .about-me {
-                text-align: left
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .project-title {
-                font-size: 1.25rem
-            }
-        }
-
-        @media(min-width:1200px) {
-            .container {
-                max-width: 1400px;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1.25rem;
-            }
-        }
-
-        /* Loader animation for hero text */
-
-
-        .tilt-title {
-            font-weight: 700;
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            text-align: center;
-            color: #00FFFF;
-            transform: rotateX(90deg);
-            opacity: 0;
-            animation: tiltIntro 1s forwards;
-        }
-
-        @keyframes tiltIntro {
-            0% {
-                transform: rotateX(90deg);
-                opacity: 0;
-            }
-
-            50% {
-                transform: rotateX(-10deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: rotateX(0deg);
-            }
-        }
-
-        .name {
-            font-family: "Cinzel", serif;
-            font-optical-sizing: auto;
-            font-weight: 700;
-            font-style: normal;
-            /* fluid responsive sizing: min on small screens, grows with viewport, larger cap on desktop */
-            font-size: clamp(1.25rem, 4vw + 0.25rem, 3.5rem);
-            line-height: 1.05;
-            margin: 0.25rem 0;
-            transition: font-size .18s ease;
-        }
-
-        @media (min-width: 1200px) {
-
-            /* increase the upper bound for very large screens */
-            .name {
-                font-size: clamp(2rem, 2.2vw + 1rem, 4.5rem);
-            }
-        }
-
-        .about {
-            border: 4px solid var(--accent-light);
-            margin-top: 1rem;
-            padding: 1rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
-            background-color: #f2c7ef52;
-        }
-
-        .timeline__item {
-            border: 4px solid var(--accent-light);
-            margin-top: 1rem;
-            padding: 1rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
-            background-color: #f2c7ef52;
-        }
-
-        p {
-            -size: 1.1rem;
-            line-height: 1.6;
-        }
-    </style>
 </head>
 
 <body>
@@ -749,39 +187,99 @@
             style="width:100%;max-width:980px;display:flex;flex-direction:column;gap:1rem;align-items:center;padding:0 0.5rem;">
             <!-- Item 1 -->
             <div class="portfolio-item" role="listitem">
-                <img src="your-image-1.jpg" alt="Project Screenshot" class="portfolio-img">
-                <h3 class="project-title">DevDale Studios – Client Website</h3>
-                <p class="project-summary">Modern responsive website designed and developed for a startup client.</p>
+                <!-- <img src="your-image-1.jpg" alt="Project Screenshot" class="portfolio-img"> -->
+                 <div class="video-wrapper" style="position:relative;width:100%;padding-top:56.25%;max-width:980px;">
+        <video controls
+               style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;">
+            <source src="https://www.dropbox.com/scl/fi/mhy8id6q87uqlcban3a5v/website.mp4?rlkey=3linteury6af2e9wlj2tomy7s&st=p7sgqu8n&raw=1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+                <h3 class="project-title">Web & E-Commerce Development Showcase</h3>
+                <p class="project-summary">Modern responsive website concepts designed and developed for a startup client.</p>
                 <button class="btn-theme" onclick="toggleCaseStudy('case1')">Read Case Study</button>
                 <div class="case-study" id="case1">
                     <h4>Case Study</h4>
-                    <p><strong>Client Problem:</strong> Client needed a fast, modern website that showcased their brand
-                        and converted leads.</p>
-                    <p><strong>My Solution:</strong> Designed a clean UI, built a mobile-first responsive layout, added
-                        theme options, and optimized load times.</p>
-                    <p><strong>Tools Used:</strong> HTML, CSS, JavaScript, SEO Optimization</p>
-                    <p><strong>Impact:</strong> Increased client conversions and improved user engagement.</p>
+                    <p><strong>Challenge:</strong> “I needed a clean and modern way to showcase a wide range of digital skills — including website design, responsive layouts, UI/UX styling, and e-commerce functionality. I wanted a clear, visually engaging demonstration of what my services could offer, without using any confidential IP information where clients are still in startup phase.” </p>
+                    <p><strong>My Solution:</strong> I designed and developed a collection of concept websites and e-commerce store examples using HTML, CSS, Bootstrap, and JavaScript. Each build focused on best-practice layouts, responsive behaviour, and visually appealing product structures. I recorded the walkthroughs using OBS Studio, then refined and compiled the footage in CapCut to create a high-quality, professional showcase reel that clearly presents the different website styles and features.</p>
+                    <p><strong>Tools Used:</strong> HTML, Bootstrap, CSS, JavaScript, SEO Optimization, OBS Studio & CapCut.</p>
+                    <p><strong>Impact:</strong>The final showcase gives <menu type="context"></menu> a strong, credible digital portfolio that I could present to potential customers and employers. It demonstrates my full capability in web development and e-commerce builds — allowing me to stand out, communicate my skills confidently, and create new business opportunities even before launching real client sites.</p>
                 </div>
             </div>
 
             <!-- Item 2 -->
             <div class="portfolio-item" role="listitem">
-                <img src="your-image-2.jpg" alt="Project Screenshot" class="portfolio-img">
-                <h3 class="project-title">E-Commerce Store Build</h3>
-                <p class="project-summary">Complete online store setup with secure checkout and product management.</p>
+              <div class="video-wrapper marketVid" style="position:relative;width:100%;padding-top:56.25%;max-width:980px;">
+        <video controls
+               style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;">
+            <source src="/home/dominique/Downloads/marketingVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+                <h3 class="project-title">Ad Campaigns & Marketing Highlights</h3>
+                <p class="project-summary">Campaigns and marketing highlights for startup clients.</p>
                 <button class="btn-theme" onclick="toggleCaseStudy('case2')">Read Case Study</button>
                 <div class="case-study" id="case2">
                     <h4>Case Study</h4>
-                    <p><strong>Client Problem:</strong> Needed a scalable store with easy product updates and sales
-                        analytics.</p>
-                    <p><strong>My Solution:</strong> Built a structured e-commerce system with UX-focused design and
-                        payment integration.</p>
-                    <p><strong>Tools Used:</strong> Wix / Shopify / HTML / JavaScript</p>
-                    <p><strong>Impact:</strong> Client launched successfully and increased revenue within weeks.</p>
+                    <p><strong>Challenge:</strong>Multiple clients needed eye-catching, results-driven ad content for their brands — including product promotions, service highlights, and general awareness campaigns. They required fast turnaround times, polished visuals, and platform-ready formats for social media.</p>
+                    <p><strong>My Solution:</strong>I created a set of custom marketing videos by combining product assets, brand colors, messaging, and motion graphics in CapCut and Canva. Each campaign piece was designed with clarity, engagement, and conversion in mind — optimized for platforms like Facebook, Instagram, and TikTok. I compiled the best-performing ad visuals into a cohesive highlight reel showcasing my creative, editing, and marketing execution capabilities.</p>
+                    <p><strong>Tools Used:</strong> CapCut, Canva & OBS Studio</p>
+                    <p><strong>Impact:</strong> The delivered campaigns helped clients improve brand visibility and engagement on social platforms. The ads increased click-through rates, attracted new customer interest, and elevated the overall professionalism of each brand’s digital presence. The highlight reel now serves as a strong portfolio asset demonstrating my ability to conceptualize, design, and deliver impactful marketing content.</p>
                 </div>
             </div>
         </div>
         </div>
+
+
+<div class="portfolio-container">
+
+    <h1>Professional Portfolio: Operational & Strategic Leadership</h1>
+
+    <h2>Executive Summary: High-Impact Administration</h2>
+    <p class="portfolio-summary">
+        My career has been defined by the ability to manage complex, high-stakes operational resources and transform administrative backlogs into measurable success. I excel at developing the systems necessary to ensure *financial stability, operational continuity, and regulatory compliance. I bring a unique combination of **logistical expertise, process design, and front-line crisis leadership* suitable for executive support roles.
+    </p>
+
+    <h2>Core Achievement Metrics (7 Categories)</h2>
+    <table class="metrics-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>High-Impact Achievement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Asset Lifecycle Management</td>
+                <td>Managed the full strategic replacement cycle for a <strong>20-vehicle fleet</strong> across 7 cycles (140+ assets), overseeing all complex inter-city logistics and documentation.</td>
+            </tr>
+            <tr>
+                <td>Financial Risk & Efficiency</td>
+                <td>Directly prevented a corporate loss of <strong>R250,000 in stock</strong> through immediate intervention, and eliminated <strong>86% of a 113-fine backlog in 24 hours</strong>.</td>
+            </tr>
+            <tr>
+                <td>Proactive Maintenance</td>
+                <td>Established a high-frequency tracking system, ensuring <strong>100% compliance</strong> with preventative maintenance schedules and <strong>minimal operational disruption</strong> for the 20-vehicle fleet.</td>
+            </tr>
+            <tr>
+                <td>Operational Scheduling</td>
+                <td>Designed and managed the matrix for <strong>24/7 staffing coverage</strong> across multiple concurrent events for over 20 cumulative operational months, guaranteeing zero service gaps.</td>
+            </tr>
+            <tr>
+                <td>Critical Inventory & Supply</td>
+                <td>Maintained a <strong>100% availability rate</strong> for all life-critical stock (e.g., oxygen) through flawless inventory management and vendor liaison.</td>
+            </tr>
+            <tr>
+                <td>Training & Compliance</td>
+                <td>Became a certified <strong>AHA Instructor</strong> and established the company as an internal resource for <strong>certified safety training</strong>, reducing risk and eliminating outsourcing costs.</td>
+            </tr>
+            <tr>
+                <td>Crisis Leadership & Liaison</td>
+                <td>Served 5 years as an <strong>ILS Paramedic</strong>, demonstrating frontline crisis management skills and effective communication with government dispatch centers.</td>
+            </tr>
+        </tbody>
+    </table>
+    
     </section>
 
 
@@ -790,20 +288,34 @@
     <section id="contact" aria-labelledby="contact-title"
         style="border:2px solid var(--accent-light); padding:1.5rem; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.06); background-color: #f2c7ef52; width:100%; max-width:720px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
         <h2 id="contact-title">Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn-theme">Send Message</button>
-            <div style="text-align:center;margin-top:1rem;">
-                <a href="/home/dominique/Downloads/Resume-Dominique Dale-1.pdf" download class="btn-theme"
-                    style="display:inline-block;text-decoration:none;padding:0.5rem 0.9rem;font-size:0.9rem;">Download
-                    Resume</a>
-            </div>
-        </form>
+           <div class="mb-3">
+        <p class="mb-1"><strong>Email:</strong> 
+          <a href="mailto:dominiquedale1982@gmail.com" class="text-decoration-none">
+            dominiquedale1982@gmail.com
+          </a>
+        </p>
+        <p class="mb-1"><strong>Phone:</strong> 
+          <a href="tel:+27767006374" class="text-decoration-none">
+            +27 767006374
+          </a>
+        </p>
+        <p class="mb-0"><strong>LinkedIn:</strong> 
+          <a href="https://www.linkedin.com/in/dominique-dale-718095130" target="_blank" class="text-decoration-none">
+            www.linkedin.com/in/dominique-dale-718095130
+          </a>
+        </p>
+      </div>
+      <p class="mb-3 contact-cta">Let’s build something extraordinary together.</p>
+
+        
+    <div style="text-align:center;margin-top:1rem;">
+        <a href="/home/dominique/Downloads/Resume-Dominique Dale-1.pdf" download class="btn-theme"
+            style="display:inline-block;text-decoration:none;padding:0.5rem 0.9rem;font-size:0.9rem;">Download
+            Resume</a>
+    </div>
+
     </section>
 
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -811,16 +323,8 @@
     </footer>
 
 
-    <script>
+    <script src="script.js">
 
-        function toggleCaseStudy(id) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            el.classList.toggle('open');
-            if (el.classList.contains('open')) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
     </script>
 
 </body>
